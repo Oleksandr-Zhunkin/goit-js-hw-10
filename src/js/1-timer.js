@@ -5,6 +5,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import iconEr from '../img/error.svg';
+import iconHello from '../img/hello.svg';
 
 const dataInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('[data-start]');
@@ -45,9 +46,12 @@ function onClickBtn(e) {
     const currentDate = Date.now();
     const diffData = userSelectedDate - currentDate;
     const { days, hours, minutes, seconds } = convertMs(diffData);
+
     createMarkup({ days, hours, minutes, seconds });
+
     if (diffData < 1000) {
       clearInterval(tick);
+      dataInput.disabled = false;
     }
   }, 1000);
 }
@@ -84,3 +88,14 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
+iziToast.info({
+  title: 'Hello',
+  message: 'Welcome!',
+  titleColor: '#fff',
+  messageColor: '#fff',
+  backgroundColor: '#09f',
+  iconUrl: iconHello,
+  position: 'topRight',
+  timeout: 2000,
+});
