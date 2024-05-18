@@ -44,7 +44,7 @@ formEl.addEventListener('submit', e => {
         messageColor: '#fff',
         backgroundColor: '#59a10d',
         position: 'topRight',
-        message: `✅ Fulfilled promise in ${delay}ms`,
+        message: `Fulfilled promise in ${delay}ms`,
         timeout: `${delay}`,
       });
     })
@@ -56,7 +56,7 @@ formEl.addEventListener('submit', e => {
         messageColor: '#fff',
         backgroundColor: '#ef4040',
         position: 'topRight',
-        message: `❌ Rejected promise in ${delay}ms`,
+        message: `Rejected promise in ${delay}ms`,
         timeout: `${delay}`,
       });
     });
